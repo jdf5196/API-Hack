@@ -1,0 +1,101 @@
+body {
+	background-color: #cccccc;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+header {
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+	height:50px;
+	border: solid;
+	border-size: 2px;
+	border-radius: 1em;
+	border-color: black;
+	background-color: #a2c4c9;
+	margin-top: 18px;
+
+}
+h1 {
+	text-align: center;
+	margin-top: 6px;
+}
+hr {
+	width: 900px;
+	height: 3px;
+	border-color:black;
+	border-radius:1em;
+	background-color:black;
+	margin-top: 32px;
+}
+#inputContainer {
+	width: 700px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+
+
+}
+#query {
+	width: 300px;
+	height: 2em;
+	margin-left: 200px;
+	margin-top:50px;
+	background-color: #a2c4c9;
+	border-color: grey;
+	border: solid;
+	border-radius: .5em;
+	
+}
+#guess {
+	width:300px;
+	height:2em;
+	margin-left: 200px;
+	margin-top:20px;
+	background-color: #a2c4c9;
+	border-color: grey;
+	border: solid;
+	border-radius: .5em;
+}
+#zipSubmit {
+	height: 10px;
+	width: 100px;
+	margin-left:300px;
+	margin-top:24px;
+}
+#impatient {
+	width: 300px;
+	margin-left: 200px;
+}
+#search-results {
+	width: 400px;
+	margin-left: auto;
+	margin-right:auto;
+	height: 150px;
+	background-color: #a2c4c9;
+	border: solid;
+	border-radius: .5em;
+	border-color: black;
+}
+#resultText {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+#source {
+	text-align: center;
+	font-size: 10px;
+}
+
+::-webkit-input-placeholder {
+    color:    #484848;
+}
+:-moz-placeholder {
+    color:    #484848;
+}
+::-moz-placeholder {
+    color:    #484848;
+}
+:-ms-input-placeholder {
+    color:    #484848;
+}
