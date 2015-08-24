@@ -55,7 +55,7 @@ $(function(){
 			else if(guessSave >= guessTemp -30 && guessSave <= guessTemp +30){
 				$('#resultText').html(' Not close.. You are within 30 degrees of the actual temperature.<br><br>Current Temperature: '+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
 			}
-			else if(guessSave >= guessTemp -50 && guessSave <= guessTemp +50){
+			else if(guessSave <= recordTemp && guessSave >= recordLow){
 				$('#resultText').html(" Either you are guessing for a location far away or you haven't been outside in a while...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
 			}
 			else if(guessSave > recordTemp && guessSave < venus){

@@ -99,3 +99,30 @@ hr {
 :-ms-input-placeholder {
     color:    #484848;
 }
+
+@media (max-width:700px){
+	header{
+		width: 100%;
+		height: 100px;
+	}
+	hr {
+		width: 100%;
+	}
+	#inputContainer {
+		width: 100%;
+	}
+	#query, #guess{
+		width: 100%;
+		margin-left: 0px;
+		text-align: center;
+	}
+	#zipSubmit, #impatient {
+		margin-left: 0px;
+		width: 100%;
+	}
+	#search-results {
+		width: 100%;
+		height: 150px;
+	}
+};
+
