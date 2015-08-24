@@ -31,6 +31,12 @@ $(function(){
 			localStorage.setItem('temperature', temp);
 			var guessTemp = parseInt(localStorage.getItem('temperature'));
 			var guessSave = parseInt(localStorage.getItem('guess'));
+			var recordTemp = 134;
+			var venus = 864
+			var sunTemp = 7000
+			var sunCenter = 24000000
+			var recordLow = -128;
+			var absolute = -459;
 			$('#query').val('');
 			$('#guess').val('');
 			$('#search-results').show();
@@ -49,8 +55,29 @@ $(function(){
 			else if(guessSave >= guessTemp -30 && guessSave <= guessTemp +30){
 				$('#resultText').html(' Not close.. You are within 30 degrees of the actual temperature.<br><br>Current Temperature: '+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
 			}
-			else {
+			else if(guessSave >= guessTemp -50 && guessSave <= guessTemp +50){
 				$('#resultText').html(" Either you are guessing for a location far away or you haven't been outside in a while...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave > recordTemp && guessSave < venus){
+				$('#resultText').html(" That is hotter than the hottest temperature ever recorded on Earth, 134°F...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave >= venus -200 && guessSave <= venus +200){
+				$('#resultText').html(" It's probably that hot somewhere on Venus. You are not on Venus...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave > venus +200 && guessSave < sunTemp){
+				$('#resultText').html("You must think you're very close to the Sun...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave >=sunTemp && guessSave < sunCenter){
+				$('#resultText').html("It's that hot somewhere on or in the Sun...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave > sunCenter){
+				$('#resultText').html("That's hotter than the center of the Sun...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave < recordLow && guessSave > absolute){
+				$('#resultText').html(" That is colder than the coldest temperature ever recorded on Earth, -128°F...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
+			}
+			else if(guessSave < absolute){
+				$('#resultText').html(" That is colder than the coldest possible temperature, -459°F...<br><br>Current Temperature: "+ temp+'°F<br>'+'Humidity: '+humidity+'%<br>'+'Chance of rain: '+rain+'%'+'<br>'+'Sunrise: '+sunrise+'<br>'+'Sunset: '+sunSet);
 			}
 		}, 'json')
 	};
